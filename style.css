@@ -1,0 +1,195 @@
+body {
+  background-color: black;
+  font-family: "DotGothic16", sans-serif;
+  color: white;
+  display: grid;
+  place-items: center;
+  scroll-behavior: smooth;
+  height: 100vh;
+  margin: 0;
+  overflow: auto;
+  cursor: default;
+  user-select: none;
+}
+
+/* hover anims */
+
+h2 {
+  display: inline-block;
+  transition: padding 0.5s ease;
+  font-size: 50px;
+}
+
+h2:hover {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+h1 {
+  display: inline-block;
+  transition: padding 0.5s ease;
+}
+
+h1:hover {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+/* images */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+/* Links animations */
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out;
+}
+
+.link1:hover {
+  color: #f44336;
+  background-color: #000000;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+/*
+.link2:hover {
+  color: #351c75; 
+  background-color: #000000; 
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+*/
+.link3:hover {
+  color: #2986cc;
+  background-color: #000000;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.link4:hover {
+  color: #f9b405;
+  background-color: #000000;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.cc {
+  text-decoration: underline;
+}
+
+/* misc properties */
+
+section {
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* .fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+*/
+
+/* li animations */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 1rem;
+  border: none;
+  text-transform: uppercase;
+  background: transparent;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s;
+}
+
+li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out 0.2s;
+}
+
+li:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+li:hover::after {
+  transform: translateY(0);
+}
+
+/* card flip animation */
+
+.flip-card {
+  perspective: 1000px;
+  display: inline-block;
+  margin: 0;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform: rotateY(0deg);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.flip-card-back {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
